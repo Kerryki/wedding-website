@@ -1,52 +1,59 @@
-import { Gift, Home, Heart } from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client"
+
+import Image from "next/image"
 
 export function GiftsSection() {
   return (
     <section id="gifts" className="py-24 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
+        {/* Title */}
         <div className="text-center mb-16">
-          <p className="text-gold tracking-[0.3em] uppercase text-sm mb-3 font-sans">Registries</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-gold mb-6">Gifts</h2>
-          <p className="text-black font-sans max-w-2xl mx-auto leading-relaxed">
-            Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift,
-            we've registered at the following places.
-          </p>
+          <p className="text-gold tracking-[0.3em] uppercase text-sm mb-3 font-sans">Blessings</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-gold">Gifts</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center p-8 border border-muted hover:border-foreground/30 transition-colors">
-            <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
-              <Gift className="w-8 h-8 text-black" />
-            </div>
-            <h3 className="font-serif text-xl text-black mb-3">Amazon</h3>
-            <p className="text-black text-sm font-sans mb-6">A variety of items for our new home together.</p>
-            <Button variant="outline" className="tracking-widest uppercase text-xs font-sans bg-transparent text-black">
-              View Registry
-            </Button>
+        {/* How to Give Section */}
+        <div className="text-center mb-12">
+          <h3 className="font-serif text-2xl md:text-3xl text-gold mb-8 tracking-[0.15em]">
+            💌 How to Give
+          </h3>
+          
+          <div className="font-serif text-black leading-relaxed space-y-6 max-w-2xl mx-auto">
+            <p>
+              If you feel led to bless us with a gift, we are gratefully accepting contributions via e-transfer or PayPal.
+            </p>
+            
+            <p>
+              You can send your gift directly to:
+            </p>
+            
+            <p className="text-gold text-lg font-semibold">
+              📧 arielleandayomide@gmail.com
+            </p>
+            
+            <p>
+              If you wish to do this in person, we will also have a gift box available on our special day
+            </p>
+            
+            <p className="italic">
+              Thank you for sowing into our future with love, generosity, and prayer. Every gift is deeply appreciated and will help us build the life God is calling us to live together.
+            </p>
+            
+            <p className="text-sm italic text-black/70 mt-8">
+              "And my God will meet all your needs according to the riches of his glory in Christ Jesus." — Philippians 4:19
+            </p>
           </div>
+        </div>
 
-          <div className="text-center p-8 border border-muted hover:border-foreground/30 transition-colors">
-            <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
-              <Home className="w-8 h-8 text-black" />
-            </div>
-            <h3 className="font-serif text-xl text-black mb-3">Crate & Barrel</h3>
-            <p className="text-black text-sm font-sans mb-6">Beautiful home essentials and decor pieces.</p>
-            <Button variant="outline" className="tracking-widest uppercase text-xs font-sans bg-transparent text-black">
-              View Registry
-            </Button>
-          </div>
-
-          <div className="text-center p-8 border border-muted hover:border-foreground/30 transition-colors">
-            <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
-              <Heart className="w-8 h-8 text-black" />
-            </div>
-            <h3 className="font-serif text-xl text-black mb-3">Honeymoon Fund</h3>
-            <p className="text-black text-sm font-sans mb-6">Help us create unforgettable memories in Italy.</p>
-            <Button variant="outline" className="tracking-widest uppercase text-xs font-sans bg-transparent text-black">
-              Contribute
-            </Button>
-          </div>
+        {/* Gift Image */}
+        <div className="relative aspect-[4/3] w-full max-w-2xl mx-auto mt-12">
+          <Image
+            src="/gifts/IMG_4372.JPG"
+            alt="Gifts"
+            fill
+            className="object-cover rounded"
+            unoptimized
+          />
         </div>
       </div>
     </section>

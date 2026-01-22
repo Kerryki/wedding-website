@@ -7,6 +7,8 @@ const navLinks = [
   { href: "#home", label: "Home" },
   { href: "#photo-gallery", label: "Photo Gallery" },
   { href: "#our-story", label: "Our Story" },
+  { href: "#gifts", label: "Gifts" },
+  { href: "#accommodations", label: "Accommodations" },
   { href: "#travel", label: "Travel" },
   { href: "#rsvp", label: "RSVP" },
 ]

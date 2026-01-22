@@ -5,7 +5,7 @@ import Image from "next/image"
 export function OurStory() {
 
   return (
-    <section id="our-story" className="py-16 px-4 bg-background">
+    <section id="our-story" className="py-16 px-4 bg-white">
       <div className="max-w-2xl mx-auto">
         {/* Title */}
         <h2 className="font-serif text-3xl md:text-4xl text-gold tracking-[0.2em] text-center mb-8">
@@ -14,19 +14,15 @@ export function OurStory() {
 
         {/* Monogram */}
         <div className="flex justify-center mb-8">
-          <svg viewBox="0 0 200 200" className="w-40 h-40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            {/* Crown */}
-            <path d="M85 35 L100 20 L115 35 M90 35 L100 25 L110 35" stroke="#b8973c" strokeWidth="1.5" fill="none"/>
-            <circle cx="100" cy="18" r="3" fill="#b8973c"/>
-            <circle cx="85" cy="35" r="2" fill="#b8973c"/>
-            <circle cx="115" cy="35" r="2" fill="#b8973c"/>
-            
-            {/* Oval */}
-            <ellipse cx="100" cy="110" rx="55" ry="65" stroke="#b8973c" strokeWidth="1.5" fill="none"/>
-            
-            {/* Letters AA */}
-            <text x="100" y="120" textAnchor="middle" className="font-serif" fontSize="36" fill="#b8973c" fontStyle="italic">A A</text>
-          </svg>
+          <div className="relative w-48 h-56">
+            <Image
+              src="/logo2/IMG_7246.jpg"
+              alt="Monogram"
+              fill
+              className="object-contain"
+              unoptimized
+            />
+          </div>
         </div>
 
         {/* Names */}

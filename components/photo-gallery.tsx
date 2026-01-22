@@ -63,7 +63,7 @@ function PhotoGrid({ photos }: { photos: Array<{ src: string; alt: string }> }) 
 
 export function PhotoGallery() {
   return (
-    <section id="photo-gallery" className="py-24 px-4 bg-accent/30">
+    <section id="photo-gallery" className="py-24 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Main Title */}
         <div className="text-center mb-16">
