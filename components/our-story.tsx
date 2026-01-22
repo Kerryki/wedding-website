@@ -78,9 +78,39 @@ export function OurStory() {
           AYOMIDE&apos;S POV
         </h4>
 
-        <p className="font-serif text-black italic text-center mb-16">
-          write text here
-        </p>
+        {/* Story Text */}
+        <div className="font-serif text-black italic leading-relaxed space-y-6 mb-16">
+          <p>
+            It all began in late April, when I was rounding up my university degree and studying for my final exam. I had finished studying for the day and was leaving the library when I locked eyes with a young lady. It was a very brief moment, and we both slowly looked away, but our eyes said the things our lips were too shy to say. As we walked past each other, I engraved a mental picture of her in my mind, and for some reason I had a feeling that this would not be our first and last encounter.
+          </p>
+          <p>
+            Sure enough, less than a week later, I was scrolling through my Instagram timeline when I couldn&apos;t believe my eyes. Instagram had suggested some profiles that I might know, and the very first one on the list was her. I laughed a little because I couldn&apos;t believe my luck. I went on her profile to make sure my eyes weren&apos;t deceiving me, and they weren&apos;t — it really was her. Now I knew I had to start a conversation with her, but I wasn&apos;t sure how. I didn&apos;t want to sound too desperate, but I also wanted to say something interesting to catch her attention. After thinking about it for a couple of minutes, I decided the best thing to do was to be polite and tell her I thought she was beautiful. So I added her on Instagram and waited for her to add me back.
+          </p>
+          <p>
+            Fortunately, she added me back pretty quickly, which gave me the confidence to message her not long after. She responded quite dryly with a simple thank you, which brought me back down to reality. &quot;Yeah, she&apos;s not feeling you,&quot; I thought, as all the anxiety from waiting for her response evaporated and turned into disappointment. Even after all this, I still convinced myself that it was okay, and that I would see her again in person someday, and maybe then I would be able to charm her with my words. (Yes, I was delusional ■)
+          </p>
+          <p>
+            About two weeks later, I was fully in vacation mode and watching an NBA playoff game between the Los Angeles Lakers and the Golden State Warriors. LeBron James, who is my favourite basketball player, had an incredible game. He scored more than forty points and had about ten assists. So I posted what was my first Instagram story in those two weeks, talking about how great of a basketball player LeBron James was, not knowing that his best assist of that night was yet to come.
+          </p>
+          <p>
+            Not long after that post, I received a message from the &quot;young lady,&quot; agreeing with me about how great of a basketball player LeBron James was. As I read her message, I immediately understood the meaning behind it. I obviously knew she had no idea about basketball or LeBron James, but she was showing interest from her side, and that was all I needed.
+          </p>
+          <p>
+            From there, we began to communicate day and night, talking about everything and nothing. Very early on, I already knew that this young lady was going to be my future wife; it was only a matter of when. Our goals aligned, our faith aligned, and our cultures were very similar. It was clear that God had made us for each other and was simply waiting for the perfect time to connect us.
+          </p>
+          <p>
+            About two weeks later, we had our first date, then our second a couple of days later, then our third, fourth, fifth — and soon we started to lose count. We became best friends very quickly, and we fell in love with each other even faster.
+          </p>
+          <p>
+            Arielle Fabiola Brou Akpele, the &quot;young lady&quot; who is now my fiancée, I thank God every day for bringing you into my life. You complement me so beautifully in this life. You are caring, loving, thoughtful, beautiful, gentle, and God-fearing. I also thank your parents for raising you in the way of the Lord and instilling in you the qualities of a woman of virtue, one that I am honoured to call my fiancée.
+          </p>
+          <p>
+            I can&apos;t wait to be your husband, Arielle.
+          </p>
+          <p className="text-center">
+            xox
+          </p>
+        </div>
       </div>
     </section>
   )
