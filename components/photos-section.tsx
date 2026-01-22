@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 const photos = [
-  { src: "/black-couple-engagement-outdoor-romantic.jpg", alt: "Engagement photo 1" },
+  { src: "/73FA7AE0-78AD-421C-8094-EBFD80B3AF08.JPG", alt: "Engagement photo 1" },
   { src: "/black-couple-laughing-candid-moment.jpg", alt: "Candid moment" },
   { src: "/black-couple-sunset-romantic.jpg", alt: "Sunset photo" },
   { src: "/black-couple-coffee-date.jpg", alt: "Coffee date" },
@@ -32,6 +32,10 @@ export function PhotosSection() {
                   alt={photo.alt}
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  priority={index === 0}
+                  quality={100}
+                  unoptimized
                 />
               </div>
             </div>
