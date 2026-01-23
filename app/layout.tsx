@@ -15,7 +15,7 @@ const _lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "Arielle and Ayomide Wedding | August 21-22, 2026",
+  title: "Arielle & Ayomide | 21-22/08/2026",
   description:
     "Join us to celebrate the wedding of Arielle and Ayomide on August 21-22, 2026 in Montreal, QC, Canada.",
   icons: {
