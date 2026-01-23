@@ -1,8 +1,10 @@
 "use client"
 
 import Image from "next/image"
+import { useLanguage } from "@/contexts/language-context"
 
 export function HeroSection() {
+  const { t } = useLanguage()
 
   return (
     <section id="home" className="bg-white">
@@ -15,14 +17,14 @@ export function HeroSection() {
           className="object-cover object-center"
           priority
           sizes="100vw"
-          unoptimized
+          quality={80}
         />
       </div>
 
       {/* Gratitude Banner */}
       <div className="bg-gold py-12 px-6">
         <p className="text-white text-center font-serif italic text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-          We are so grateful for the love, support, and joy you bring into our lives. As we begin this new chapter together, your presence means the world to us. Thank you for being part of our special day, we can't wait to celebrate with you! God bless you,
+          {t("hero.gratitude")}
         </p>
       </div>
 
@@ -36,7 +38,7 @@ export function HeroSection() {
               alt="Monogram"
               fill
               className="object-contain"
-              unoptimized
+              quality={85}
             />
           </div>
         </div>
@@ -48,7 +50,7 @@ export function HeroSection() {
 
         {/* Date and Location */}
         <p className="text-black tracking-[0.15em] text-sm md:text-base mb-8">
-          AUGUST 21-22, 2026 · MONTREAL, QC, CANADA
+          {t("hero.dateLocation")}
         </p>
 
         {/* RSVP Button */}
@@ -56,63 +58,63 @@ export function HeroSection() {
           href="#rsvp"
           className="inline-block px-10 py-3 bg-[#5c5a4e] text-white tracking-[0.2em] text-sm hover:bg-[#4a4840] transition-colors duration-300"
         >
-          RSVP
+          {t("hero.rsvp")}
         </a>
       </div>
 
       {/* Traditional Wedding Day */}
       <div className="py-12 px-4 text-center">
         <h2 className="font-serif text-2xl md:text-3xl text-gold tracking-[0.1em] mb-2">
-          TRADITIONAL WEDDING DAY
+          {t("hero.traditionalWedding")}
         </h2>
         <p className="text-black tracking-[0.1em] text-sm mb-1">
-          FRIDAY, AUGUST 21, 2026
+          {t("hero.friday")}
         </p>
         <p className="text-black tracking-[0.05em] text-sm mb-6">
-          12:00 PM - 2:00 PM
+          {t("hero.traditionalTime")}
         </p>
 
         <p className="font-serif text-black italic mb-1">
-          Shapla Venue LaSalle - Banquet Hall
+          {t("hero.traditionalVenue")}
         </p>
         <p className="font-serif text-black italic text-sm mb-6">
-          2222 Avenue Dollard, Montreal, QC, H8N 1S6, Canada
+          {t("hero.traditionalAddress")}
         </p>
 
         <p className="font-serif text-black italic text-sm max-w-md mx-auto mb-4">
-          Join us for a traditional wedding ceremony combining Ivorian culture with Nigerian culture
+          {t("hero.traditionalDescription")}
         </p>
         <p className="font-serif text-black italic text-sm">
-          By invitation only
+          {t("hero.byInvitation")}
         </p>
       </div>
 
       {/* Wedding Day */}
       <div className="py-12 px-4 text-center">
         <h2 className="font-serif text-2xl md:text-3xl text-gold tracking-[0.1em] mb-2">
-          WEDDING DAY
+          {t("hero.weddingDay")}
         </h2>
         <p className="text-black tracking-[0.1em] text-sm mb-1">
-          SATURDAY, AUGUST 22, 2026
+          {t("hero.saturday")}
         </p>
         <p className="text-black tracking-[0.05em] text-sm mb-8">
-          1:00 PM - 11:00 PM
+          {t("hero.weddingTime")}
         </p>
 
         {/* Religious Ceremony */}
         <div className="pt-8 mb-8">
-          <p className="text-black text-sm mb-2">1:00 PM - 3:30 PM</p>
-          <p className="font-serif text-gold tracking-[0.1em] mb-4">RELIGIOUS CEREMONY</p>
-          <p className="font-serif text-black italic">Église catholique Saint-Charles</p>
-          <p className="font-serif text-black italic text-sm">2111 Rue Centre, Montréal, QC, H3K 1J5, Canada</p>
+          <p className="text-black text-sm mb-2">{t("hero.religiousTime")}</p>
+          <p className="font-serif text-gold tracking-[0.1em] mb-4">{t("hero.religiousCeremony")}</p>
+          <p className="font-serif text-black italic">{t("hero.religiousVenue")}</p>
+          <p className="font-serif text-black italic text-sm">{t("hero.religiousAddress")}</p>
         </div>
 
         {/* Reception */}
         <div className="pt-8">
-          <p className="text-black text-sm mb-2">5:00 PM - 11:00 PM</p>
-          <p className="font-serif text-gold tracking-[0.1em] mb-4">RECEPTION</p>
-          <p className="font-serif text-black italic">Palace Convention Centre</p>
-          <p className="font-serif text-black italic text-sm">1717 Boulevard le Corbusier, Laval, QC, H7S 2K7, Canada</p>
+          <p className="text-black text-sm mb-2">{t("hero.receptionTime")}</p>
+          <p className="font-serif text-gold tracking-[0.1em] mb-4">{t("hero.reception")}</p>
+          <p className="font-serif text-black italic">{t("hero.receptionVenue")}</p>
+          <p className="font-serif text-black italic text-sm">{t("hero.receptionAddress")}</p>
         </div>
       </div>
     </section>

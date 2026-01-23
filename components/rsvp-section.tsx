@@ -8,8 +8,10 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle2, Loader2 } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
 
 export function RsvpSection() {
+  const { t, language } = useLanguage()
   const [submitted, setSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [attendance, setAttendance] = useState<string>("")
@@ -60,12 +62,20 @@ export function RsvpSection() {
           <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center mx-auto mb-6">
             <CheckCircle2 className="w-10 h-10 text-black" />
           </div>
-          <h2 className="font-serif text-4xl text-gold mb-4">Thank You for RSVP'ing!</h2>
+          <h2 className="font-serif text-4xl text-gold mb-4">{t("rsvp.thankYou")}</h2>
           <p className="text-black font-sans mb-4">
-            Please kindly send $60 to <span className="font-semibold">arielleandayomide@gmail.com</span> to confirm your
-            reservation.
+            {t("rsvp.confirm")} <span className="font-semibold">arielleandayomide@gmail.com</span> {t("rsvp.confirm2")}{" "}
+            <a
+              href="https://arielleetayomide.rsvpify.com/rsvp-page-preview/1223264?signature=f1853ca9eeae38bdfbe58d77983161cf2c0b8bd5502c48007f6879eec2972c14"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gold hover:text-gold/80 underline font-semibold"
+            >
+              {t("rsvp.paymentLink")}
+            </a>{" "}
+            {t("rsvp.confirm3")}
           </p>
-          <p className="text-black font-sans">Thank you for celebrating with us!</p>
+          <p className="text-black font-sans">{t("rsvp.celebrate")}</p>
         </div>
       </section>
     )
@@ -75,16 +85,16 @@ export function RsvpSection() {
     <section id="rsvp" className="py-16 px-4 bg-background">
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-gold tracking-[0.3em] uppercase text-sm mb-3 font-sans">Be Our Guest</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-gold mb-4">RSVP</h2>
-          <p className="text-black font-sans">Please respond by August 15, 2026</p>
+          <p className="text-gold tracking-[0.3em] uppercase text-sm mb-3 font-sans">{t("rsvp.beOurGuest")}</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-gold mb-4">{t("rsvp.title")}</h2>
+          <p className="text-black font-sans">{t("rsvp.deadline")}</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form key={language} onSubmit={handleSubmit} className="space-y-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="firstName" className="font-sans text-black">
-                First Name
+                {t("rsvp.firstName")}
               </Label>
               <Input
                 id="firstName"
@@ -95,7 +105,7 @@ export function RsvpSection() {
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName" className="font-sans text-black">
-                Last Name
+                {t("rsvp.lastName")}
               </Label>
               <Input
                 id="lastName"
@@ -108,7 +118,7 @@ export function RsvpSection() {
 
           <div className="space-y-2">
             <Label htmlFor="email" className="font-sans text-black">
-              Email Address
+              {t("rsvp.email")}
             </Label>
             <Input
               id="email"
@@ -120,18 +130,18 @@ export function RsvpSection() {
           </div>
 
           <div className="space-y-3">
-            <Label className="font-sans text-black">Will you be attending?</Label>
+            <Label className="font-sans text-black">{t("rsvp.attending")}</Label>
             <RadioGroup value={attendance} onValueChange={setAttendance}>
               <div className="flex items-center space-x-3">
                 <RadioGroupItem value="yes" id="attending-yes" />
                 <Label htmlFor="attending-yes" className="font-sans font-normal text-black">
-                  Joyfully Accept
+                  {t("rsvp.yes")}
                 </Label>
               </div>
               <div className="flex items-center space-x-3">
                 <RadioGroupItem value="no" id="attending-no" />
                 <Label htmlFor="attending-no" className="font-sans font-normal text-black">
-                  Regretfully Decline
+                  {t("rsvp.no")}
                 </Label>
               </div>
             </RadioGroup>
@@ -142,7 +152,7 @@ export function RsvpSection() {
             <>
               <div className="space-y-2">
                 <Label htmlFor="guests" className="font-sans text-black">
-                  Number of Guests (including yourself)
+                  {t("rsvp.guests")}
                 </Label>
                 <Input
                   id="guests"
@@ -157,12 +167,12 @@ export function RsvpSection() {
 
               <div className="space-y-2">
                 <Label htmlFor="dietary" className="font-sans text-black">
-                  Dietary Restrictions
+                  {t("rsvp.dietary")}
                 </Label>
                 <Input
                   id="dietary"
                   name="dietary"
-                  placeholder="Vegetarian, gluten-free, allergies, etc."
+                  placeholder={t("rsvp.dietaryPlaceholder")}
                   className="border-muted-foreground/30 focus:border-foreground text-black"
                 />
               </div>
@@ -171,25 +181,25 @@ export function RsvpSection() {
 
           <div className="space-y-2">
             <Label htmlFor="eventChoice" className="font-sans text-black">
-              Which event will you be joining us for? (The traditional wedding, white wedding, or both)
+              {t("rsvp.eventChoice")}
             </Label>
             <Input
               id="eventChoice"
               name="eventChoice"
-              placeholder="Traditional wedding, white wedding, or both"
+              placeholder={t("rsvp.eventPlaceholder")}
               className="border-muted-foreground/30 focus:border-foreground text-black"
             />
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="message" className="font-sans text-black">
-              Message to the Couple (Optional)
+              {t("rsvp.message")}
             </Label>
             <Textarea
               id="message"
               name="message"
               rows={4}
-              placeholder="Share your well wishes..."
+              placeholder={t("rsvp.messagePlaceholder")}
               className="border-muted-foreground/30 focus:border-foreground resize-none text-black"
             />
           </div>
@@ -202,10 +212,10 @@ export function RsvpSection() {
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Sending...
+                {t("rsvp.sending")}
               </>
             ) : (
-              "Send RSVP"
+              t("rsvp.send")
             )}
           </Button>
         </form>

@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Cormorant_Garamond, Lato } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { LanguageProvider } from "@/contexts/language-context"
 import "./globals.css"
 
 const _cormorant = Cormorant_Garamond({
@@ -45,7 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

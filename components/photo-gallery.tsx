@@ -1,28 +1,37 @@
+"use client"
+
 import Image from "next/image"
+import { useLanguage } from "@/contexts/language-context"
 
 // Engagement Shoot images from public folder
 const engagementShootPhotos = [
-  { src: "/IMG_4366.JPG", alt: "Engagement photo 1" },
-  { src: "/IMG_4368.JPG", alt: "Engagement photo 2" },
-  { src: "/IMG_4369.JPG", alt: "Engagement photo 3" },
-  { src: "/IMG_4370.JPG", alt: "Engagement photo 4" },
+  { src: "/IMG_4366.jpeg", alt: "Engagement photo 1" },
+  { src: "/IMG_4368.jpeg", alt: "Engagement photo 2" },
+  { src: "/IMG_4369.jpeg", alt: "Engagement photo 3" },
+  { src: "/IMG_4370.jpeg", alt: "Engagement photo 4" },
 ]
 
 // Proposal photos from public/proposal folder
 const proposalPhotos = [
-  { src: "/proposal/IMG_7652.JPG", alt: "Proposal photo 1" },
-  { src: "/proposal/IMG_7662.JPG", alt: "Proposal photo 2" },
-  { src: "/proposal/IMG_7663.JPG", alt: "Proposal photo 3" },
-  { src: "/proposal/IMG_7693.JPG", alt: "Proposal photo 4" },
+  { src: "/proposal/IMG_7652.jpeg", alt: "Proposal photo 1" },
+  { src: "/proposal/IMG_7662.jpeg", alt: "Proposal photo 2" },
+  { src: "/proposal/IMG_7663.jpeg", alt: "Proposal photo 3" },
+  { src: "/proposal/IMG_7693.jpeg", alt: "Proposal photo 4" },
+]
+
+// Traditional shoot photos from public/traditional folder
+const traditionalPhotos = [
+  { src: "/traditional/IMG_5113.jpeg", alt: "Traditional shoot photo 1" },
+  { src: "/traditional/IMG_5114.jpeg", alt: "Traditional shoot photo 2" },
 ]
 
 // Moments photos from public/moments folder
 const momentsPhotos = [
-  { src: "/moments/IMG_3690.JPG", alt: "Moment 1" },
-  { src: "/moments/IMG_3860.JPG", alt: "Moment 2" },
-  { src: "/moments/IMG_4273.JPG", alt: "Moment 3" },
-  { src: "/moments/IMG_4621.JPG", alt: "Moment 4" },
-  { src: "/moments/IMG_8788.JPG", alt: "Moment 5" },
+  { src: "/moments/IMG_3690.jpeg", alt: "Moment 1" },
+  { src: "/moments/IMG_3860.jpeg", alt: "Moment 2" },
+  { src: "/moments/IMG_4273.jpeg", alt: "Moment 3" },
+  { src: "/moments/IMG_4621.jpeg", alt: "Moment 4" },
+  { src: "/moments/IMG_8788.jpeg", alt: "Moment 5" },
 ]
 
 function PhotoGrid({ photos }: { photos: Array<{ src: string; alt: string }> }) {
@@ -51,8 +60,7 @@ function PhotoGrid({ photos }: { photos: Array<{ src: string; alt: string }> }) 
               className="object-cover hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 768px) 50vw, 33vw"
               priority={index === 0}
-              quality={100}
-              unoptimized
+              quality={75}
             />
           </div>
         </div>
@@ -62,19 +70,21 @@ function PhotoGrid({ photos }: { photos: Array<{ src: string; alt: string }> }) 
 }
 
 export function PhotoGallery() {
+  const { t } = useLanguage()
+  
   return (
     <section id="photo-gallery" className="py-24 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Main Title */}
         <div className="text-center mb-16">
-          <p className="text-gold tracking-[0.3em] uppercase text-sm mb-3 font-sans">Memories</p>
-          <h2 className="font-serif text-4xl md:text-5xl text-gold">Photo Gallery</h2>
+          <p className="text-gold tracking-[0.3em] uppercase text-sm mb-3 font-sans">{t("gallery.memories")}</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-gold">{t("gallery.title")}</h2>
         </div>
 
         {/* Engagement Shoot Section */}
         <div className="mb-20">
           <h3 className="font-serif text-3xl md:text-4xl text-gold text-center mb-12 tracking-[0.15em]">
-            Engagement Shoot
+            {t("gallery.engagementShoot")}
           </h3>
           <PhotoGrid photos={engagementShootPhotos} />
         </div>
@@ -82,15 +92,23 @@ export function PhotoGallery() {
         {/* Proposal Section */}
         <div className="mb-20">
           <h3 className="font-serif text-3xl md:text-4xl text-gold text-center mb-12 tracking-[0.15em]">
-            Proposal
+            {t("gallery.proposal")}
           </h3>
           <PhotoGrid photos={proposalPhotos} />
+        </div>
+
+        {/* Traditional Shoot Section */}
+        <div className="mb-20">
+          <h3 className="font-serif text-3xl md:text-4xl text-gold text-center mb-12 tracking-[0.15em]">
+            {t("gallery.traditionalShoot")}
+          </h3>
+          <PhotoGrid photos={traditionalPhotos} />
         </div>
 
         {/* Moments Section */}
         <div>
           <h3 className="font-serif text-3xl md:text-4xl text-gold text-center mb-12 tracking-[0.15em]">
-            Moments
+            {t("gallery.moments")}
           </h3>
           <PhotoGrid photos={momentsPhotos} />
         </div>

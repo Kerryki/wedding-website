@@ -1,6 +1,11 @@
+"use client"
+
 import Image from "next/image"
+import { useLanguage } from "@/contexts/language-context"
 
 export function Footer() {
+  const { t } = useLanguage()
+  
   return (
     <footer className="py-16 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
@@ -13,12 +18,12 @@ export function Footer() {
                 alt="Monogram"
                 fill
                 className="object-contain"
-                unoptimized
+                quality={85}
               />
             </div>
           </div>
           <div className="w-16 h-px bg-black/30 mx-auto mb-4" />
-          <p className="text-black tracking-[0.1em] text-sm">08.2021</p>
+          <p className="text-black tracking-[0.1em] text-sm">{t("footer.date")}</p>
         </div>
       </div>
     </footer>
